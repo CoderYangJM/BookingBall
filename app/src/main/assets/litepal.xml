@@ -1,0 +1,10 @@
+
+<litepal>
+    <dbname value="booking_ball"/>
+    <version value="2"/>
+    <list>
+        <mapping class="com.example.bookingball.database.UnpaidBill"/>
+        <mapping class="com.example.bookingball.database.UserAccountPW"/>
+        <mapping class="com.example.bookingball.database.SettleBill"/>
+    </list>
+</litepal>

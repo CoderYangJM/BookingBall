@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/statistics_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activitys.StatisticsActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#E7E3E3"
+                android:theme="@style/Theme.AppCompat.Light"
+                app:contentInsetStart="0dp"
+                app:popupTheme="@style/Theme.AppCompat.Light"
+                app:titleTextAppearance="@style/MenuTextStyle">
+
+                <TextView
+                    android:id="@+id/title_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Statistics"
+                    android:textSize="22sp" />
+            </android.support.v7.widget.Toolbar>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/shape_button"
+                            android:gravity="center_horizontal"
+                            android:text="年度消费"
+                            android:textColor="#000000" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="选择年份：" />
+
+                            <Spinner
+                                android:id="@+id/statistics_year_spinner"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"></Spinner>
+
+                            <TextView
+                                android:id="@+id/statistics_yearSum_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:text="总消费：" />
+                        </LinearLayout>
+
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/statistics_year_lineChart"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"></com.github.mikephil.charting.charts.LineChart>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/shape_button"
+                            android:gravity="center_horizontal"
+                            android:text="月消费"
+                            android:textColor="#000000" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="选择月份：" />
+
+                            <Spinner
+                                android:id="@+id/statistics_month_spinner"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"></Spinner>
+
+                            <TextView
+                                android:id="@+id/statistics_monthSum_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:text="月总消费：" />
+                        </LinearLayout>
+
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/statistics_month_lineChart"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"></com.github.mikephil.charting.charts.LineChart>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/shape_button"
+                            android:gravity="center_horizontal"
+                            android:text="消费雷达图"
+                            android:textColor="#000000" />
+
+                        <com.github.mikephil.charting.charts.RadarChart
+                            android:id="@+id/statistics_radar"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"></com.github.mikephil.charting.charts.RadarChart>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom">
+
+                <include layout="@layout/bottom_layout" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+
+        <include layout="@layout/nav_layout" />
+    </LinearLayout>
+</android.support.v4.widget.DrawerLayout>
